@@ -1,0 +1,11 @@
+.ProjectCard {
+    box-sizing: border-box;
+    box-shadow: 2px 2px 2px 2px gray;
+    border-radius: 5px;
+    width: 300px;
+    height: 100px;
+    padding: 5px;
+    margin: 10px;
+    font-weight: bold;
+    text-align: center;
+}
