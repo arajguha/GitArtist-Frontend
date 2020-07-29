@@ -44,11 +44,19 @@ class NewProject extends Component{
                     })
                 })
                 .catch(err => {
-                    console.log(err)
-                    this.setState({
-                        error: true,
-                        message: 'Project already exists or some error occured'
-                    })
+                    console.log(err.response.status)
+                    if(err.response.status === 422){
+                        this.setState({
+                            error: true,
+                            message: 'Project already exists'
+                        })
+                    }else{
+                        this.setState({
+                            error: true,
+                            message: 'Some error occured. Please try again'
+                        })
+                    }
+                    
                 })
             
         }
