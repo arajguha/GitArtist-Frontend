@@ -4,7 +4,6 @@ import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom'
 import ProjectCards from './components/ProjectCards/ProjectCards'
 import classes from './App.module.css'
 import AuxHoc from './components/hoc/AuxHoc/AuxHoc'
-import Modal from './components/UI/Modal/Modal'
 
 class App extends Component {
 
@@ -45,7 +44,6 @@ class App extends Component {
             </Switch>
           </div>
         </BrowserRouter>
-        <Modal show><p>Modal Test</p></Modal>
       </AuxHoc>
     )
   }
