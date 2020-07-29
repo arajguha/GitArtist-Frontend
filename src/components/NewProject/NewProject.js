@@ -8,7 +8,8 @@ import AuxHoc from '../hoc/AuxHoc/AuxHoc'
 class NewProject extends Component{
     state = {
         title: '',
-        nameError: false
+        message: null,
+        error: false
     }
 
     handleInputChange = (e) => {
@@ -19,18 +20,36 @@ class NewProject extends Component{
         e.preventDefault()
         if(!this.state.title || this.state.title === ''){
             //alert('Enter valid Project name')
-            this.setState({nameError: true})
+            this.setState({
+                error: true,
+                message: 'Invalid Project Name'
+            })
         }
         else{
-            this.setState({nameError: false})
+            this.setState({
+                error: false,
+                message: null
+            })
             const projectName = this.state.title.trim()
-            console.log(projectName)
+            //console.log(projectName)
             
             axios.post('http://localhost:3001/gitArtist/create-project', {
                 name: projectName
             })
-                .then(res => console.log(res))
-                .catch(err => console.log(err))
+                .then(res => {
+                    console.log(res)
+                    this.setState({
+                        error: false,
+                        message: 'Project Created'
+                    })
+                })
+                .catch(err => {
+                    console.log(err)
+                    this.setState({
+                        error: true,
+                        message: 'Project already exists or some error occured'
+                    })
+                })
             
         }
     }
@@ -55,12 +74,12 @@ class NewProject extends Component{
                             label="Create"
                             clickHandler={e => this.submitHandler(e)} 
                         />
-                        {this.state.nameError ? 
+                        {this.state.message ? 
                             <p style={{
-                                color: 'red', 
+                                color: this.state.error ? 'red' : 'green', 
                                 fontWeight: 'bold'
                             }}>
-                                Invalid Name
+                                {this.state.message}
                             </p> : null
                         }
                     </form>
