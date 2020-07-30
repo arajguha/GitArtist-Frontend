@@ -1,10 +1,15 @@
 import React from 'react'
-import classes from './Modal.module.css' 
+import './Modal.css' 
 
 const modal = props => {
+    const clickHandler = (e) => {
+        if(e.target.classList.contains("Backdrop")){
+            console.log('backdrop clicked')
+        }
+    }
     return (
-        <div className={classes.Backdrop}>
-            <div className={classes.modal}>
+        <div className="Backdrop" onClick={clickHandler}>
+            <div className="Modal">
                 Modal Test
             </div>
         </div>
