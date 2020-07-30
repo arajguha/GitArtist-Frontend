@@ -5,12 +5,13 @@ const modal = props => {
     const clickHandler = (e) => {
         if(e.target.classList.contains("Backdrop")){
             console.log('backdrop clicked')
+            props.modalCloseHandler('')
         }
     }
     return (
         <div className="Backdrop" onClick={clickHandler}>
             <div className="Modal">
-                Modal Test
+                {props.children}
             </div>
         </div>
     )

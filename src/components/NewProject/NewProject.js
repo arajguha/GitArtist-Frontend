@@ -12,18 +12,23 @@ class NewProject extends Component{
         error: false
     }
 
+ 
+
     handleInputChange = (e) => {
         this.setState({ title: e.target.value })
     }
 
     submitHandler = (e) => {
         e.preventDefault()
-        if(!this.state.title || this.state.title === ''){
+        if(!this.state.title || this.state.title === '' || this.state.title.trim() === ''){
             //alert('Enter valid Project name')
             this.setState({
                 error: true,
                 message: 'Invalid Project Name'
             })
+             ////
+             this.props.modalHandler('Invalid Project Name')
+             ////
         }
         else{
             this.setState({
@@ -42,6 +47,10 @@ class NewProject extends Component{
                         error: false,
                         message: 'Project Created'
                     })
+                    ////
+                    this.props.modalHandler('Project Created')
+                    ////
+
                 })
                 .catch(err => {
                     console.log(err.response.status)
@@ -50,11 +59,17 @@ class NewProject extends Component{
                             error: true,
                             message: 'Project already exists'
                         })
+                        ////
+                        this.props.modalHandler('Project already exists')
+                        ////
                     }else{
                         this.setState({
                             error: true,
                             message: 'Some error occured. Please try again'
                         })
+                        ////
+                        this.props.modalHandler('Some error occured. Please try again')
+                        ////
                     }
                     
                 })
@@ -82,14 +97,15 @@ class NewProject extends Component{
                             label="Create"
                             clickHandler={e => this.submitHandler(e)} 
                         />
-                        {this.state.message ? 
+                        {/*this.state.message ? 
                             <p style={{
                                 color: this.state.error ? 'red' : 'green', 
                                 fontWeight: 'bold'
                             }}>
                                 {this.state.message}
                             </p> : null
-                        }
+                        */}
+
                     </form>
                 </div>
             </AuxHoc>
