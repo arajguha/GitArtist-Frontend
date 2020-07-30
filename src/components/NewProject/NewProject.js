@@ -18,7 +18,7 @@ class NewProject extends Component{
 
     submitHandler = (e) => {
         e.preventDefault()
-        if(!this.state.title || this.state.title === ''){
+        if(!this.state.title || this.state.title === '' || this.state.title.trim() === ''){
             //alert('Enter valid Project name')
             this.setState({
                 error: true,
