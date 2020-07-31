@@ -57,10 +57,12 @@ class App extends Component {
             </Switch>
           </div>
         </BrowserRouter>
-        { this.state.modalDisplay 
-          && <Modal modalCloseHandler={this.modalToggle}>
+
+        { this.state.modalDisplay && 
+          <Modal modalCloseHandler={this.modalToggle}>
               {this.state.modalMessage}
-            </Modal> }
+          </Modal> 
+        }
       </>
     )
   }

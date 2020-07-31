@@ -12,8 +12,6 @@ class NewProject extends Component{
         error: false
     }
 
- 
-
     handleInputChange = (e) => {
         this.setState({ title: e.target.value })
     }
@@ -97,14 +95,6 @@ class NewProject extends Component{
                             label="Create"
                             clickHandler={e => this.submitHandler(e)} 
                         />
-                        {/*this.state.message ? 
-                            <p style={{
-                                color: this.state.error ? 'red' : 'green', 
-                                fontWeight: 'bold'
-                            }}>
-                                {this.state.message}
-                            </p> : null
-                        */}
 
                     </form>
                 </div>
