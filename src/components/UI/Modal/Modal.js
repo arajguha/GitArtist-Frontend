@@ -1,5 +1,4 @@
 import React from 'react'
-import { motion } from 'framer-motion'
 import './Modal.css' 
 
 const modal = props => {
@@ -9,13 +8,15 @@ const modal = props => {
         }
     }
     return (
-        <div className="Backdrop" onClick={clickHandler}>
-            <motion.div 
+        <div 
+            className="Backdrop" 
+            onClick={clickHandler}
+        >
+            <div 
                 className="Modal"
-                animate={{opacity: 1}}
             >
                 {props.children}
-            </motion.div>
+            </div>
         </div>
     )
 }
