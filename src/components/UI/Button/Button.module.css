@@ -9,8 +9,9 @@
     border-radius: 5px;
 }
 
-.CustomButton :hover{
+.CustomButton:hover{
     cursor: pointer;
+    background-color: #006400;
 }
 
 .Success {
