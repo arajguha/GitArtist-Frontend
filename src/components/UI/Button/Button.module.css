@@ -1,7 +1,8 @@
 .CustomButton{
-    background-color: green;
-    color: white;
+    background-color: #00c853;
+    color: black;
     font-weight: bold;
+    font-size: 15px;
     width: 100px;
     height: 40px;
     padding: 5px;
@@ -11,12 +12,12 @@
 
 .CustomButton:hover{
     cursor: pointer;
-    background-color: #006400;
+    background-color: #5efc82;
 }
 
 .Success {
-    background-color: green;
-    color: white;
+    background-color: #00c853;
+    color: black;
 }
 
 .Danger {

@@ -9,9 +9,10 @@
     margin-top:100px;
     align-items: center;
     padding: 5px;
+    background-color: #ffffff;
 }
 
 .NewProject input {
     width: 250px;
-    height:25px;
+    height:30px;
 }
