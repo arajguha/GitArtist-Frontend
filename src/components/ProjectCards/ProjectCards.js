@@ -10,7 +10,6 @@ class ProjectCards extends Component{
         loading: true,
         projects: [],
         err: false,
-        selected: false
     }
 
     componentDidMount() {
